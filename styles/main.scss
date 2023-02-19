@@ -1,0 +1,324 @@
+@import "./loader";
+$blue:#3671e9;
+
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Raleway', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition-duration: 300ms;
+}
+
+body {
+    background-color: #edf1f5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav {
+    width: 100vw;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    border-bottom: 1px solid #efefef;
+    font-family: 'Raleway', sans-serif;
+    padding: 0 60px;
+
+
+    .left {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: x-large;
+
+        img {
+            width: 80px;
+            margin-right: 20px;
+        }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        font-size: x-large;
+        padding: 14px 24px;
+        background: $blue;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(.95);
+        }
+
+        &:active {
+            transform: scale(.9);
+        }
+
+        img {
+            width: 24px;
+            margin-right: 14px;
+        }
+    }
+
+    z-index: 10;
+}
+
+.tabs {
+    width: 100vw;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 50px;
+    // border-bottom: 4px solid #efefef;
+    font-family: 'Raleway', sans-serif;
+    padding: 0 20px 0 20px;
+    border-bottom: 2px solid #efefef;
+    padding-top: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    .block {
+        padding: 20px 10px;
+        margin-right: 10px;
+        font-size: large;
+        border-bottom: 2px solid #fff;
+        cursor: pointer;
+
+        &:hover {
+            border-bottom: 2px solid $blue;
+        }
+
+        &:active {
+            border-bottom: 2px solid $blue;
+        }
+    }
+}
+
+.applications {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 40px 80px;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.application {
+    width: 90%;
+    max-width: 360px;
+    background: #fff;
+    padding: 34px;
+    min-height: 380px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition-duration: 100ms;
+
+    &:active {
+        transform: scale(.9);
+    }
+
+    .subject {
+        width: 100%;
+        font-size: x-large;
+        line-height: 30px;
+        margin-bottom: 7px;
+        min-height: 30px;
+        text-transform: capitalize;
+    }
+
+    .name {
+        width: 80%;
+        font-family: 'Raleway', sans-serif;
+        min-height: 30px;
+        text-transform: capitalize;
+    }
+
+    .description {
+        font-size: large;
+        margin-top: 10px;
+        line-height: 24px;
+        min-height: 320px;
+    }
+}
+
+.shadow {
+    background: #efefef;
+    border-radius: 4px;
+    filter: blur(1px);
+}
+
+.app-write,
+.app-view,
+.edit-write {
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 98%;
+    max-width: 600px;
+    height: 90%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 20;
+    padding: 60px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    padding-top: 0;
+    overflow-y: scroll;
+
+    // initially display none
+    display: none;
+
+    label {
+        font-size: large;
+        text-transform: capitalize;
+    }
+
+    h1 {
+        width: 100%;
+        margin-bottom: 20px;
+        font-family: 'Montserrat', sans-serif;
+        border-bottom: 2px solid #efefef;
+        padding-bottom: 10px;
+        padding-top: 30px;
+        position: sticky;
+        top: 0;
+        background: #fff;
+    }
+
+    input,
+    #description-input,
+    #edit-remark-input {
+        padding: 12px 20px;
+        width: 100%;
+        border: 1px solid #262626;
+        border-radius: 8px;
+        outline: none;
+        stroke: none;
+        margin-top: 6px;
+        margin-bottom: 20px;
+        font-size: large;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    input {
+        min-height: 52px;
+    }
+
+    button {
+        outline: none;
+        stroke: none;
+        font-size: x-large;
+        padding: 14px 34px;
+        background: $blue;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+        text-transform: uppercase;
+
+        &:hover {
+            transform: scale(.95);
+        }
+
+        &:active {
+            transform: scale(.9);
+        }
+
+        margin-right: 20px;
+    }
+}
+
+#close {
+    background: tomato;
+}
+
+.app-view {
+    display: flex;
+
+    label {
+        margin-bottom: 4px;
+    }
+
+    div {
+        background: #efefef;
+        padding: 10px;
+        width: 100%;
+        border-radius: 6px;
+        padding-left: 8px;
+        margin-bottom: 20px;
+        font-size: larger;
+        word-break: break-all;
+        // overflow: scroll;
+    }
+
+    a {
+        padding: 10px 20px;
+        background: #efefef;
+        text-decoration: none;
+        width: auto;
+        color: $blue;
+        font-size: larger;
+        margin-bottom: 20px;
+
+        &:hover {
+            transform: scale(.95);
+        }
+
+        &:active {
+            transform: scale(.9);
+        }
+    }
+
+    // initially
+    display: none;
+}
+
+.remarks {
+    width: 100%;
+    background: #fff;
+}
+
+.remark {
+    width: 100%;
+    background: transparent;
+    border-left: 10px solid tomato;
+    border-left: 10px solid lightgreen;
+
+    div {
+        font-size: large;
+        padding-left: 0;
+        margin-bottom: 10px;
+    }
+
+    margin-bottom: 10px;
+}
+
+#view-close,
+#edit-remark-close {
+    background: tomato;
+}
+
+.edit-write {
+    display: flex;
+    height: 60%;
+    display: none;
+}
